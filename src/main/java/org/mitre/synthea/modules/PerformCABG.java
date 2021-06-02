@@ -48,7 +48,7 @@ public class PerformCABG extends Module {
     if (Provider.getProviderList().isEmpty()) {
       // hack to prevent a crash is the test suite, if this module gets instantiated before providers load.
       // this should never happen when creating a real population
-      return Collections.emptyList();
+      throw new IllegalStateException("tried to load cabg module before providers");
     }
     
     Provider provider = Provider.getProviderList().get(0);
