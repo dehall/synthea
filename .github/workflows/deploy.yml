@@ -43,7 +43,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: master-branch-latest
-          draft: false
           prerelease: true
                 
       - name: Deploy UberJar
