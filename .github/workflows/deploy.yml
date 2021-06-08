@@ -56,3 +56,12 @@ jobs:
           asset_name: synthea-with-dependencies.jar
           asset_content_type: application/java-archive
         
+        # it's necessary to add another "publish" at the end because otherwise the release is always listed as "draft"
+        # see https://github.com/actions/upload-release-asset/issues/34
+      - name: Publish Release
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          omitBodyDuringUpdate: true
+          replacesArtifacts: false
+          token: ${{ secrets.GITHUB_TOKEN }}
