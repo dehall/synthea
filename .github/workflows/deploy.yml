@@ -64,4 +64,5 @@ jobs:
           allowUpdates: true
           omitBodyDuringUpdate: true
           replacesArtifacts: false
+          tag: master-branch-latest
           token: ${{ secrets.GITHUB_TOKEN }}
